@@ -1,7 +1,7 @@
 README in progress...
 
 # Project description
-Simple implementation of Blog in React TypeScript and SCSS. The project was made while learning React. For authorization used local storage.
+Simple implementation of Blog in React TypeScript and SCSS.
 
 <a href="https://github.com/ArtyomSukiasyan/Blog" target="_blank">Initial version</a>
 
