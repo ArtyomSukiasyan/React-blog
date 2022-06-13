@@ -1,8 +1,14 @@
 import Header from "./Components/Header/Header";
-import "./App.scss"
+import Footer from "./Components/Footer/Footer";
+import "./App.scss";
 
 function App() {
-  return <Header />;
+  return (
+    <>
+      <Header /> 
+      <Footer />
+    </>
+  );
 }
 
 export default App;
