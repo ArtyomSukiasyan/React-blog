@@ -4,7 +4,7 @@ import "./Header.scss";
 
 export default function Header() {
   return (
-    <header className="header">
+    <header>
       <img className="logo" src={logo} alt="Logo" />
       <Navbar />
     </header>
