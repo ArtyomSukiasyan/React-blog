@@ -1,9 +1,9 @@
 import { useState } from "react";
+import IDgenerator from "../../helpers/IDgenerator";
 
 export default function CreatePost() {
   const [title, setTitle] = useState("");
   const [info, setInfo] = useState("");
-
   const [postId, setPostId] = useState(1);
 
   const handleChangeTitle = (e: any) => {
@@ -22,6 +22,7 @@ export default function CreatePost() {
     const currentPost = [
       ...prevLocalStorage,
       {
+        id: IDgenerator(prevLocalStorage),
         title: title,
         info: info,
         userId: userId,

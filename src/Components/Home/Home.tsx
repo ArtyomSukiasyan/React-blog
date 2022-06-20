@@ -6,7 +6,7 @@ export default function Home() {
     <div className="container">
       {posts.map((post: any) => {
         return (
-          <div className="posts">
+          <div key={post.id} className="posts">
             <div className="title">
               <h2>{post.title}</h2>
             </div>
