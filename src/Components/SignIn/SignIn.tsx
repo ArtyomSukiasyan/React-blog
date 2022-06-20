@@ -115,7 +115,7 @@ export default function SignIn() {
 
   return (
     <div className="sign-in-form">
-      <form action="">
+      <form>
         <Input type="text" placeholder="name" onChange={handleChangeName} />
         <Input
           type="text"
