@@ -9,7 +9,7 @@ export default function Login() {
   const [isValidEmail, setIsValidEmail] = useState(false);
   const [isValidPassword, setIsValidPassword] = useState(false);
 
-  const handleChangeEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChangeEmail = (e: React.ChangeEvent<HTMLInputElement>): void => {
     setEmail(e.target.value);
     setExistEmailMessage("");
     const mailCheck =
@@ -25,7 +25,7 @@ export default function Login() {
     }
   };
 
-  const handleChangePassword = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChangePassword = (e: React.ChangeEvent<HTMLInputElement>):void => {
     setPassword(e.target.value);
     setWrongPasswordMessage("");
 
@@ -41,7 +41,7 @@ export default function Login() {
     }
   };
 
-  const onRegister = () => {
+  const onRegister = (): void => {
     const users = JSON.parse(localStorage.getItem("users") || "[]");
 
     let getEmail = false;

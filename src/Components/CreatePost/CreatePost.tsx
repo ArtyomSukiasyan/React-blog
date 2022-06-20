@@ -7,15 +7,17 @@ export default function CreatePost() {
   const [info, setInfo] = useState("");
   const [postId, setPostId] = useState(1);
 
-  const handleChangeTitle = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChangeTitle = (e: React.ChangeEvent<HTMLInputElement>): void => {
     setTitle(e.target.value);
   };
 
-  const handleChangeInfo = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+  const handleChangeInfo = (
+    e: React.ChangeEvent<HTMLTextAreaElement>
+  ): void => {
     setInfo(e.target.value);
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = (): void => {
     const userId = JSON.parse(localStorage.getItem("currentUser") || "[]")[0]
       .id;
 
@@ -35,6 +37,7 @@ export default function CreatePost() {
     setInfo("");
     setPostId((prev) => prev + 1);
   };
+  
   const emptyInputValues = title === "" || info === "";
 
   return (
