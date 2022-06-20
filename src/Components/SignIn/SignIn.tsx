@@ -14,7 +14,7 @@ export default function SignIn() {
   const [isValidEmail, setIsValidEmail] = useState(false);
   const [isValidPassword, setIsValidPassword] = useState(false);
 
-  const handleChangeName = (e: any) => {
+  const handleChangeName = (e: React.ChangeEvent<HTMLInputElement>) => {
     const nameCheck = /^[a-zA-Z ]{1,30}$/;
     const isValid = nameCheck.test(e.target.value);
     if (isValid) {
@@ -25,7 +25,7 @@ export default function SignIn() {
     }
   };
 
-  const handleChangeSurname = (e: any) => {
+  const handleChangeSurname = (e: React.ChangeEvent<HTMLInputElement>) => {
     const surnameCheck = /^[a-zA-Z ]{1,30}$/;
     const isValid = surnameCheck.test(e.target.value);
     if (isValid) {
@@ -36,7 +36,7 @@ export default function SignIn() {
     }
   };
 
-  const handleChangeEmail = (e: any) => {
+  const handleChangeEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
     const users = JSON.parse(localStorage.getItem("users") || "[]");
 
     for (let i = 0; i < users.length; i++) {
@@ -61,7 +61,7 @@ export default function SignIn() {
     }
   };
 
-  const handleChangePassword = (e: any) => {
+  const handleChangePassword = (e: React.ChangeEvent<HTMLInputElement>) => {
     setPassword(e.target.value);
     const passwordCheck =
       /^(?=.*[0-9])(?=.*[!@#$%^&*?])[a-zA-Z0-9!@#$%^&*?]{6,16}$/;

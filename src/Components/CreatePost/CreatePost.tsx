@@ -7,11 +7,11 @@ export default function CreatePost() {
   const [info, setInfo] = useState("");
   const [postId, setPostId] = useState(1);
 
-  const handleChangeTitle = (e: any) => {
+  const handleChangeTitle = (e: React.ChangeEvent<HTMLInputElement>) => {
     setTitle(e.target.value);
   };
 
-  const handleChangeInfo = (e: any) => {
+  const handleChangeInfo = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setInfo(e.target.value);
   };
 
