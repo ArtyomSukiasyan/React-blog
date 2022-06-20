@@ -1,5 +1,6 @@
 import { useState } from "react";
 import IDgenerator from "../../helpers/IDgenerator";
+import { IPost } from "../../models/Posts";
 
 export default function CreatePost() {
   const [title, setTitle] = useState("");
@@ -19,7 +20,7 @@ export default function CreatePost() {
       .id;
 
     const prevLocalStorage = JSON.parse(localStorage.getItem("posts") || "[]");
-    const currentPost = [
+    const posts: IPost[] = [
       ...prevLocalStorage,
       {
         id: IDgenerator(prevLocalStorage),
@@ -29,7 +30,7 @@ export default function CreatePost() {
         postId: postId,
       },
     ];
-    localStorage.setItem("posts", JSON.stringify(currentPost));
+    localStorage.setItem("posts", JSON.stringify(posts));
     setTitle("");
     setInfo("");
     setPostId((prev) => prev + 1);
@@ -41,7 +42,12 @@ export default function CreatePost() {
       <h2>Create post</h2>
 
       <form>
-        <input type="text" value={title} placeholder="Title" onChange={handleChangeTitle} />
+        <input
+          type="text"
+          value={title}
+          placeholder="Title"
+          onChange={handleChangeTitle}
+        />
         <textarea placeholder="Info" value={info} onChange={handleChangeInfo} />
 
         <button onClick={handleSubmit} disabled={emptyInputValues}>
