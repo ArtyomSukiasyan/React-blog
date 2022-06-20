@@ -1,5 +1,6 @@
 import { useState } from "react";
 import IDgenerator from "../../helpers/IDgenerator";
+import Input from "../Input/Input";
 import "./SignIn.scss";
 
 export default function SignIn() {
@@ -36,8 +37,7 @@ export default function SignIn() {
   };
 
   const handleChangeEmail = (e: any) => {
-    // const users = localStorage.getItem("users");
-    const users:any = []
+    const users = JSON.parse(localStorage.getItem("users") || "[]");
 
     for (let i = 0; i < users.length; i++) {
       if (users[i]?.email === e.target.value) {
@@ -76,10 +76,8 @@ export default function SignIn() {
   };
 
   const onRegister = () => {
-    // const users = localStorage.getItem("users")
-    //   ? JSON.parse(localStorage.getItem("users"))
-    //   : [];
-    const users: any = [];
+    const users = JSON.parse(localStorage.getItem("users") || "[]");
+
     localStorage.setItem(
       "users",
       JSON.stringify([
@@ -118,18 +116,20 @@ export default function SignIn() {
   return (
     <div className="sign-in-form">
       <form action="">
-        <input type="text" placeholder="name" onChange={handleChangeName} />
-        <input
+        <Input type="text" placeholder="name" onChange={handleChangeName} />
+        <Input
           type="text"
           placeholder="surname"
           onChange={handleChangeSurname}
         />
-        <input type="email" placeholder="email" onChange={handleChangeEmail} />
-        <input
+        <Input type="email" placeholder="email" onChange={handleChangeEmail} />
+        <p>{existEmailMessage}</p>
+        <Input
           type="password"
           placeholder="password"
           onChange={handleChangePassword}
         />
+
         <button onClick={onRegister} disabled={!checkValidation}>
           Sign In
         </button>
