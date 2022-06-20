@@ -1,4 +1,4 @@
-export default function IDgenerator(arr: any) {
+export default function IDgenerator(arr: any): number {
   if (arr.length === 0) {
     return 1;
   } else {
