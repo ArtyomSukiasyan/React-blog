@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 export default function Header(): ReactElement {
   const navigate = useNavigate();
 
-  const handleClick = () => {
+  const handleClick = (): void => {
     navigate("/");
   };
 
