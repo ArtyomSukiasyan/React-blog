@@ -1,6 +1,7 @@
 import { ReactElement, useState } from "react";
 import IDgenerator from "../../helpers/IDgenerator";
 import { IPost } from "../../models/Posts";
+import Button from "../Button/Button";
 
 export default function CreatePost(): ReactElement {
   const [title, setTitle] = useState("");
@@ -53,9 +54,11 @@ export default function CreatePost(): ReactElement {
         />
         <textarea placeholder="Info" value={info} onChange={handleChangeInfo} />
 
-        <button onClick={handleSubmit} disabled={emptyInputValues}>
-          Create Post
-        </button>
+        <Button
+          onClick={handleSubmit}
+          title="Create Post"
+          disabled={emptyInputValues}
+        />
       </form>
     </div>
   );

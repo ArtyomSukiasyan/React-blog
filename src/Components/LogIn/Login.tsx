@@ -1,5 +1,6 @@
 import { ReactElement, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Button from "../Button/Button";
 import Input from "../Input/Input";
 
 export default function Login(): ReactElement {
@@ -80,9 +81,7 @@ export default function Login(): ReactElement {
       />
       <p>{wrongPasswordMessage}</p>
 
-      <button onClick={onRegister} disabled={!checkValidation}>
-        Log In
-      </button>
+      <Button className="auth" onClick={onRegister} disabled={!checkValidation} title="Log in" />
     </div>
   );
 }

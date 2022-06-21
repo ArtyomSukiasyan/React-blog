@@ -1,5 +1,6 @@
 import { ReactElement, useState } from "react";
 import IDgenerator from "../../helpers/IDgenerator";
+import Button from "../Button/Button";
 import Input from "../Input/Input";
 import "./SignIn.scss";
 
@@ -134,9 +135,12 @@ export default function SignIn(): ReactElement {
           onChange={handleChangePassword}
         />
 
-        <button onClick={onRegister} disabled={!checkValidation}>
-          Sign In
-        </button>
+        <Button
+          className="auth"
+          onClick={onRegister}
+          disabled={!checkValidation}
+          title="Sign in"
+        />
       </form>
     </div>
   );

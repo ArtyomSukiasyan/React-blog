@@ -1,0 +1,10 @@
+@import "../../styles/variables.scss";
+
+.auth {
+  width: 25%;
+  border: none;
+  border-radius: 8px;
+  background-color: $primary-color;
+  color: $secondary-color;
+  padding: 8px;
+}
