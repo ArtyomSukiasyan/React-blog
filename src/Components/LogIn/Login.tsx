@@ -1,4 +1,5 @@
 import { ReactElement, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Input from "../Input/Input";
 
 export default function Login(): ReactElement {
@@ -8,6 +9,7 @@ export default function Login(): ReactElement {
   const [wrongPasswordMessage, setWrongPasswordMessage] = useState("");
   const [isValidEmail, setIsValidEmail] = useState(false);
   const [isValidPassword, setIsValidPassword] = useState(false);
+  const navigate = useNavigate();
 
   const handleChangeEmail = (e: React.ChangeEvent<HTMLInputElement>): void => {
     setEmail(e.target.value);
@@ -61,26 +63,26 @@ export default function Login(): ReactElement {
     } else {
       localStorage.setItem("currentUser", JSON.stringify([users[id]]));
     }
+
+    navigate("/");
   };
 
   const checkValidation = isValidEmail && isValidPassword && !existEmailMessage;
 
   return (
     <div className="sign-in-form">
-      <form action="">
-        <Input type="email" placeholder="email" onChange={handleChangeEmail} />
-        <p>{existEmailMessage}</p>
-        <Input
-          type="password"
-          placeholder="password"
-          onChange={handleChangePassword}
-        />
-        <p>{wrongPasswordMessage}</p>
+      <Input type="email" placeholder="email" onChange={handleChangeEmail} />
+      <p>{existEmailMessage}</p>
+      <Input
+        type="password"
+        placeholder="password"
+        onChange={handleChangePassword}
+      />
+      <p>{wrongPasswordMessage}</p>
 
-        <button onClick={onRegister} disabled={!checkValidation}>
-          Log In
-        </button>
-      </form>
+      <button onClick={onRegister} disabled={!checkValidation}>
+        Log In
+      </button>
     </div>
   );
 }

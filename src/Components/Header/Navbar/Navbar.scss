@@ -1,0 +1,10 @@
+@import "../../../styles/variables.scss";
+
+.log-out {
+  color: $primary-color;
+  text-decoration: none;
+  padding: 8px 24px;
+  background-color: $secondary-color;
+  border-radius: 8px;
+  cursor: pointer;
+}
