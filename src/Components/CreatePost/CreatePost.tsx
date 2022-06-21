@@ -1,7 +1,7 @@
 import { ReactElement, useState } from "react";
-import IDgenerator from "../../helpers/IDgenerator";
-import { IPost } from "../../models/Post";
 import Button from "../Button/Button";
+import { IPost } from "../../models/Post";
+import IDgenerator from "../../helpers/IDgenerator";
 import "./CreatePost.scss";
 
 export default function CreatePost(): ReactElement {
@@ -36,7 +36,9 @@ export default function CreatePost(): ReactElement {
         postId: postId,
       },
     ];
+
     localStorage.setItem("posts", JSON.stringify(posts));
+    
     setTitle("");
     setInfo("");
     setPostId((prev) => prev + 1);

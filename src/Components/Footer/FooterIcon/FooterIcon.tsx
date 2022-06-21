@@ -1,7 +1,7 @@
+import { ReactElement } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import "./FooterIcon.scss";
-import { ReactElement } from "react";
 
 export default function FooterIcon({
   href,

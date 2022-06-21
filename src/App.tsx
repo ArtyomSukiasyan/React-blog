@@ -1,16 +1,16 @@
+import { ReactElement } from "react";
+import { Navigate, Route, Routes } from "react-router-dom";
+import Home from "./Components/Home/Home";
 import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";
-import "./App.scss";
 import SignIn from "./Components/SignIn/SignIn";
-import { Navigate, Route, Routes } from "react-router-dom";
 import LogIn from "./Components/LogIn/Login";
 import CreatePost from "./Components/CreatePost/CreatePost";
-import Home from "./Components/Home/Home";
-import { ReactElement } from "react";
 import ErrorPage from "./Components/404/404";
 import About from "./Components/About/About";
 import PrivacyPolicy from "./Components/PrivacyPolicy/PrivacyPolicy";
 import TermsOfUse from "./Components/TermsOfUse/TermsOfUse";
+import "./App.scss";
 
 function App(): ReactElement {
   const currentUser = localStorage.getItem("currentUser") || "";

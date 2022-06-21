@@ -1,3 +1,5 @@
-export default function TermsOfUse(){
-    return <div>Terms of use</div>
+import { ReactElement } from "react";
+
+export default function TermsOfUse(): ReactElement {
+  return <div>Terms of use</div>;
 }

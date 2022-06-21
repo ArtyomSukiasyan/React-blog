@@ -1,11 +1,11 @@
+import { ReactElement } from "react";
+import FooterIcon from "../FooterIcon/FooterIcon";
 import {
   faYoutube,
   faFacebook,
   faTwitter,
   faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
-import { ReactElement } from "react";
-import FooterIcon from "../FooterIcon/FooterIcon";
 import "./FooterIcons.scss";
 
 export default function FooterIcons(): ReactElement {
