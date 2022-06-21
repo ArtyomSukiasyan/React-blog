@@ -11,14 +11,21 @@
     max-width: 300px;
     margin: 8px;
     border: 1px solid $primary-color;
-    
+
     .title {
-      text-align: center;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
       background-color: $primary-color;
       color: $secondary-color;
       padding: 16px;
     }
-    
+
+    .delete-icon {
+      width: 20px;
+      fill: $secondary-color;
+    }
+
     .content {
       width: 100%;
       height: 100px;
