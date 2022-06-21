@@ -1,6 +1,6 @@
 import { ReactElement, useState } from "react";
 import IDgenerator from "../../helpers/IDgenerator";
-import { IPost } from "../../models/Posts";
+import { IPost } from "../../models/Post";
 import Button from "../Button/Button";
 
 export default function CreatePost(): ReactElement {
@@ -23,10 +23,12 @@ export default function CreatePost(): ReactElement {
       .id;
 
     const prevLocalStorage = JSON.parse(localStorage.getItem("posts") || "[]");
+    const id = IDgenerator(prevLocalStorage);
+
     const posts: IPost[] = [
       ...prevLocalStorage,
       {
-        id: IDgenerator(prevLocalStorage),
+        id: id,
         title: title,
         info: info,
         userId: userId,

@@ -1,6 +1,8 @@
-export interface IButton{
-    className?: string,
-    onClick: any,
-    title: string,
-    disabled?: boolean
+import { MouseEventHandler } from "react";
+
+export interface IButton {
+  className?: string;
+  onClick: MouseEventHandler<HTMLButtonElement>;
+  title: string;
+  disabled?: boolean;
 }
