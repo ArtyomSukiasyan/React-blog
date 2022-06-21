@@ -6,8 +6,9 @@ import { Route, Routes } from "react-router-dom";
 import LogIn from "./Components/LogIn/Login";
 import CreatePost from "./Components/CreatePost/CreatePost";
 import Home from "./Components/Home/Home";
+import { ReactElement } from "react";
 
-function App() {
+function App(): ReactElement {
   return (
     <>
       <Header />
