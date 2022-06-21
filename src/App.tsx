@@ -7,6 +7,7 @@ import LogIn from "./Components/LogIn/Login";
 import CreatePost from "./Components/CreatePost/CreatePost";
 import Home from "./Components/Home/Home";
 import { ReactElement } from "react";
+import ErrorPage from "./Components/404/404";
 
 function App(): ReactElement {
   const currentUser = localStorage.getItem("currentUser") || "";
@@ -28,6 +29,7 @@ function App(): ReactElement {
           )}
           <Route path="/sign-in" element={<SignIn />}></Route>
           <Route path="/login" element={<LogIn />}></Route>
+          <Route path="*" element={<ErrorPage />}></Route>
         </Routes>
       </div>
       <Footer />
