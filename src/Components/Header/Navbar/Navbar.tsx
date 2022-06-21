@@ -7,11 +7,11 @@ export default function Navbar(): ReactElement {
       <NavbarItem href="/" title="Home" />
       <NavbarItem href="/create-post" title="Create post" />
       {localStorage.getItem("currentUser") ? (
-        <NavbarItem href="/logout" title="LogOut" />
+        <NavbarItem href="/logout" title="Log Out" />
       ) : (
         <>
           <NavbarItem href="/sign-in" title="Sign in" />
-          <NavbarItem href="/login" title="LogIn" />
+          <NavbarItem href="/login" title="Log In" />
         </>
       )}
     </>
