@@ -4,10 +4,11 @@ import {
   faTwitter,
   faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
+import { ReactElement } from "react";
 import FooterIcon from "../FooterIcon/FooterIcon";
 import "./FooterIcons.scss";
 
-export default function FooterIcons() {
+export default function FooterIcons(): ReactElement {
   return (
     <div className="footer-icons">
       <FooterIcon href="https://www.youtube.com/" icon={faYoutube} />
