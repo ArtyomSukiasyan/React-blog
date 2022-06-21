@@ -8,6 +8,9 @@ import CreatePost from "./Components/CreatePost/CreatePost";
 import Home from "./Components/Home/Home";
 import { ReactElement } from "react";
 import ErrorPage from "./Components/404/404";
+import About from "./Components/About/About";
+import PrivacyPolicy from "./Components/PrivacyPolicy/PrivacyPolicy";
+import TermsOfUse from "./Components/TermsOfUse/TermsOfUse";
 
 function App(): ReactElement {
   const currentUser = localStorage.getItem("currentUser") || "";
@@ -29,6 +32,10 @@ function App(): ReactElement {
           )}
           <Route path="/sign-in" element={<SignIn />}></Route>
           <Route path="/login" element={<LogIn />}></Route>
+          <Route path="/about" element={<About />}></Route>
+          <Route path="/privacy" element={<PrivacyPolicy />}></Route>
+          <Route path="/terms" element={<TermsOfUse />}></Route>
+
           <Route path="*" element={<ErrorPage />}></Route>
         </Routes>
       </div>
