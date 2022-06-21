@@ -1,4 +1,5 @@
 import { ReactElement, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import IDgenerator from "../../helpers/IDgenerator";
 import Button from "../Button/Button";
 import Input from "../Input/Input";
@@ -14,6 +15,7 @@ export default function SignIn(): ReactElement {
   const [isValidSurname, setIsValidSurname] = useState(false);
   const [isValidEmail, setIsValidEmail] = useState(false);
   const [isValidPassword, setIsValidPassword] = useState(false);
+  const navigate = useNavigate();
 
   const handleChangeName = (e: React.ChangeEvent<HTMLInputElement>): void => {
     const nameCheck = /^[a-zA-Z ]{1,30}$/;
@@ -109,6 +111,8 @@ export default function SignIn(): ReactElement {
         },
       ])
     );
+
+    navigate("/");
   };
 
   const checkValidation =
