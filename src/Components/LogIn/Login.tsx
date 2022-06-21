@@ -25,7 +25,9 @@ export default function Login(): ReactElement {
     }
   };
 
-  const handleChangePassword = (e: React.ChangeEvent<HTMLInputElement>):void => {
+  const handleChangePassword = (
+    e: React.ChangeEvent<HTMLInputElement>
+  ): void => {
     setPassword(e.target.value);
     setWrongPasswordMessage("");
 
