@@ -7,6 +7,7 @@
   background-color: $primary-color;
   color: $secondary-color;
   padding: 8px;
+  cursor: pointer;
 }
 
 .log-out {
@@ -15,4 +16,15 @@
   padding: 8px 24px;
   background-color: $secondary-color;
   border-radius: 8px;
+  cursor: pointer;
+}
+
+.create-post{
+  width: 10%;
+  border: none;
+  border-radius: 8px;
+  background-color: $primary-color;
+  color: $secondary-color;
+  padding: 8px;
+  cursor: pointer;
 }

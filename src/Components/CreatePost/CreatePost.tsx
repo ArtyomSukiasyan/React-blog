@@ -2,6 +2,7 @@ import { ReactElement, useState } from "react";
 import IDgenerator from "../../helpers/IDgenerator";
 import { IPost } from "../../models/Post";
 import Button from "../Button/Button";
+import "./CreatePost.scss";
 
 export default function CreatePost(): ReactElement {
   const [title, setTitle] = useState("");
@@ -44,24 +45,32 @@ export default function CreatePost(): ReactElement {
   const emptyInputValues = title === "" || info === "";
 
   return (
-    <div>
+    <div className="wrapper">
       <h2>Create post</h2>
+      <div className="create-post-container">
+        <form>
+          <input
+            className="text-field"
+            type="text"
+            value={title}
+            placeholder="Title"
+            onChange={handleChangeTitle}
+          />
+          <textarea
+            className="text-field"
+            placeholder="Info"
+            value={info}
+            onChange={handleChangeInfo}
+          />
 
-      <form>
-        <input
-          type="text"
-          value={title}
-          placeholder="Title"
-          onChange={handleChangeTitle}
-        />
-        <textarea placeholder="Info" value={info} onChange={handleChangeInfo} />
-
-        <Button
-          onClick={handleSubmit}
-          title="Create Post"
-          disabled={emptyInputValues}
-        />
-      </form>
+          <Button
+            className="create-post"
+            onClick={handleSubmit}
+            title="Create Post"
+            disabled={emptyInputValues}
+          />
+        </form>
+      </div>
     </div>
   );
 }

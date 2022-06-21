@@ -1,0 +1,19 @@
+.wrapper {
+  text-align: center;
+
+  .create-post-container {
+    padding-top: 16px;
+    text-align: center;
+
+    .text-field {
+      width: 50%;
+      display: block;
+      margin: 0 auto;
+      margin-bottom: 16px;
+    }
+
+    textarea {
+      height: 200px;
+    }
+  }
+}
