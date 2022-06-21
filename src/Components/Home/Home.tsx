@@ -1,6 +1,7 @@
+import { ReactElement } from "react";
 import "./Home.scss";
 
-export default function Home() {
+export default function Home(): ReactElement {
   const posts = JSON.parse(localStorage.getItem("posts") || "[]");
   return (
     <div className="container">
