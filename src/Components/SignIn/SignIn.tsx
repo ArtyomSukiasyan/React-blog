@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { ReactElement, useState } from "react";
 import IDgenerator from "../../helpers/IDgenerator";
 import Input from "../Input/Input";
 import "./SignIn.scss";
 
-export default function SignIn() {
+export default function SignIn(): ReactElement {
   const [name, setName] = useState("");
   const [surname, setSurname] = useState("");
   const [email, setEmail] = useState("");
