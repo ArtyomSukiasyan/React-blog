@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { ReactElement, useState } from "react";
 import Input from "../Input/Input";
 
-export default function Login() {
+export default function Login(): ReactElement {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [existEmailMessage, setExistEmailMessage] = useState("");
