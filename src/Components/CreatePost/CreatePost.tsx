@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { ReactElement, useState } from "react";
 import IDgenerator from "../../helpers/IDgenerator";
 import { IPost } from "../../models/Posts";
 
-export default function CreatePost() {
+export default function CreatePost(): ReactElement {
   const [title, setTitle] = useState("");
   const [info, setInfo] = useState("");
   const [postId, setPostId] = useState(1);
@@ -37,7 +37,7 @@ export default function CreatePost() {
     setInfo("");
     setPostId((prev) => prev + 1);
   };
-  
+
   const emptyInputValues = title === "" || info === "";
 
   return (
