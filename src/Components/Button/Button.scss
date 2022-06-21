@@ -1,30 +1,27 @@
 @import "../../styles/variables.scss";
 
-.auth {
-  width: 25%;
+button {
   border: none;
   border-radius: 8px;
+  cursor: pointer;
+}
+
+.auth {
+  width: 25%;
   background-color: $primary-color;
   color: $secondary-color;
   padding: 8px;
-  cursor: pointer;
 }
 
 .log-out {
-  color: $primary-color;
-  text-decoration: none;
-  padding: 8px 24px;
   background-color: $secondary-color;
-  border-radius: 8px;
-  cursor: pointer;
+  color: $primary-color;
+  padding: 8px 24px;
 }
 
-.create-post{
+.create-post {
   width: 10%;
-  border: none;
-  border-radius: 8px;
   background-color: $primary-color;
   color: $secondary-color;
   padding: 8px;
-  cursor: pointer;
 }
