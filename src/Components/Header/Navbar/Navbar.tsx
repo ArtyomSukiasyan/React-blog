@@ -1,6 +1,7 @@
+import { ReactElement } from "react";
 import NavbarItem from "./NavbarItem/NavbarItem";
 
-export default function Navbar() {
+export default function Navbar(): ReactElement {
   return (
     <>
       <NavbarItem href="/" title="Home" />
