@@ -1,4 +1,5 @@
 import { ReactElement, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { ReactComponent as RemoveIcon } from "../../Assets/remove.svg";
 import { ReactComponent as EditIcon } from "../../Assets/edit.svg";
 import { IPost } from "../../models/Post";
@@ -8,6 +9,23 @@ export default function Home(): ReactElement {
   const [posts, setPosts] = useState(
     JSON.parse(localStorage.getItem("posts") || "[]")
   );
+  const navigate = useNavigate();
+
+  const editPost = (
+    postUserId: number,
+    postId: number,
+    postTitle: string,
+    postInfo: string
+  ) => {
+    const currentUser = JSON.parse(localStorage.getItem("currentUser") || "[]");
+    const currentUserId = currentUser[0].id;
+
+    if (postUserId !== currentUserId) {
+      return;
+    }
+
+    navigate("/create-post", { state: { postId, postTitle, postInfo } });
+  };
 
   const deletePost = (postUserId: number, postId: number) => {
     const currentUser = JSON.parse(localStorage.getItem("currentUser") || "[]");
@@ -30,7 +48,12 @@ export default function Home(): ReactElement {
             <div className="title">
               <h2>{post.title}</h2>
               <div className="icons">
-                <EditIcon className="icon" />
+                <EditIcon
+                  className="icon"
+                  onClick={() =>
+                    editPost(post.userId, post.id, post.title, post.info)
+                  }
+                />
                 <RemoveIcon
                   onClick={() => deletePost(post.userId, post.id)}
                   className="icon"

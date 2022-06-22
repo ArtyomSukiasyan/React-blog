@@ -3,5 +3,4 @@ export interface IPost {
   title: string;
   info: string;
   userId: number;
-  postId: number;
 }
