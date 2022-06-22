@@ -1,5 +1,6 @@
 import { ReactElement, useState } from "react";
-import { ReactComponent as Logo } from "../../Assets/remove.svg";
+import { ReactComponent as RemoveIcon } from "../../Assets/remove.svg";
+import { ReactComponent as EditIcon } from "../../Assets/edit.svg";
 import { IPost } from "../../models/Post";
 import "./Home.scss";
 
@@ -28,10 +29,13 @@ export default function Home(): ReactElement {
           <div key={post.id} className="posts">
             <div className="title">
               <h2>{post.title}</h2>
-              <Logo
-                onClick={() => deletePost(post.userId, post.id)}
-                className="delete-icon"
-              />
+              <div className="icons">
+                <EditIcon className="icon" />
+                <RemoveIcon
+                  onClick={() => deletePost(post.userId, post.id)}
+                  className="icon"
+                />
+              </div>
             </div>
             <div className="content">{post.info}</div>
           </div>

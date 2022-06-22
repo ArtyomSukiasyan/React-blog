@@ -14,16 +14,24 @@
 
     .title {
       display: flex;
-      justify-content: space-around;
+      justify-content: space-between;
       align-items: center;
       background-color: $primary-color;
       color: $secondary-color;
       padding: 16px;
-    }
 
-    .delete-icon {
-      width: 20px;
-      fill: $secondary-color;
+      .icons {
+        width: 25%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .icon {
+          width: 20px;
+          fill: $secondary-color;
+          cursor: pointer;
+        }
+      }
     }
 
     .content {
