@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Navbar from "./Navbar/Navbar";
 import logo from "../../Assets/logo.png";
 import "./Header.scss";
+import MobileMenu from "../MobileMenu/MobileMenu";
 
 export default function Header(): ReactElement {
   const navigate = useNavigate();
@@ -14,7 +15,12 @@ export default function Header(): ReactElement {
   return (
     <header>
       <img className="logo" src={logo} alt="Logo" onClick={handleClick} />
-      <Navbar />
+      <nav className="desktop">
+        <Navbar />
+      </nav>
+      <nav className="mobile">
+        <MobileMenu />
+      </nav>
     </header>
   );
 }
