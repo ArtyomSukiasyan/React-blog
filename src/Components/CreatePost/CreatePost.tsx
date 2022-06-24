@@ -5,6 +5,7 @@ import { IPost } from "../../models/Post";
 import IDgenerator from "../../helpers/IDgenerator";
 import "./CreatePost.scss";
 import { emptyString } from "../../constants/ValidationMessages";
+import { localStorageSetItem } from "../../helpers/localStorage";
 
 export default function CreatePost(): ReactElement {
   const { state } = useLocation();
@@ -54,7 +55,7 @@ export default function CreatePost(): ReactElement {
       ];
     }
 
-    localStorage.setItem("posts", JSON.stringify(posts));
+    localStorageSetItem("posts", posts);
 
     setTitle(emptyString);
     setInfo(emptyString);

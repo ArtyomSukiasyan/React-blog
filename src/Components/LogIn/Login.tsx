@@ -8,6 +8,7 @@ import {
   notFoundEmailMessage,
 } from "../../constants/ValidationMessages";
 import { ICurrentUser } from "../../models/CurrentUser";
+import { localStorageSetItem } from "../../helpers/localStorage";
 
 export default function Login(): ReactElement {
   const [email, setEmail] = useState<string>(emptyString);
@@ -53,8 +54,7 @@ export default function Login(): ReactElement {
       setWrongPasswordMessage(isWrongPasswordMessage);
       return;
     }
-
-    localStorage.setItem("currentUser", JSON.stringify([users[id]]));
+    localStorageSetItem("currentUser", [users[id]]);
     navigate("/");
   };
 

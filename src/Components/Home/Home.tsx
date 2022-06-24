@@ -4,6 +4,7 @@ import { ReactComponent as RemoveIcon } from "../../Assets/remove.svg";
 import { ReactComponent as EditIcon } from "../../Assets/edit.svg";
 import { IPost } from "../../models/Post";
 import "./Home.scss";
+import { localStorageSetItem } from "../../helpers/localStorage";
 
 export default function Home(): ReactElement {
   const [posts, setPosts] = useState<IPost[]>(
@@ -37,7 +38,7 @@ export default function Home(): ReactElement {
 
     const filteredPosts = posts.filter((el: any) => el.id !== postId);
     setPosts(filteredPosts);
-    localStorage.setItem("posts", JSON.stringify(filteredPosts));
+    localStorageSetItem("posts", filteredPosts);
   };
 
   return (

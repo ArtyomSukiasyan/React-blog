@@ -19,6 +19,7 @@ import {
 import IDgenerator from "../../helpers/IDgenerator";
 import { ICurrentUser } from "../../models/CurrentUser";
 import "./SignIn.scss";
+import { localStorageSetItem } from "../../helpers/localStorage";
 
 export default function SignIn(): ReactElement {
   const [name, setName] = useState<string>(emptyString);
@@ -129,8 +130,8 @@ export default function SignIn(): ReactElement {
       password: password,
     };
 
-    localStorage.setItem("users", JSON.stringify([...users, currentUser]));
-    localStorage.setItem("currentUser", JSON.stringify([currentUser]));
+    localStorageSetItem("users", [...users, currentUser]);
+    localStorageSetItem("currentUser", [currentUser]);
 
     navigate("/");
   };
