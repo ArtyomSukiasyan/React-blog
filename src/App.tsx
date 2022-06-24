@@ -11,9 +11,10 @@ import About from "./Components/About/About";
 import PrivacyPolicy from "./Components/PrivacyPolicy/PrivacyPolicy";
 import TermsOfUse from "./Components/TermsOfUse/TermsOfUse";
 import "./App.scss";
+import { emptyString } from "./constants/ValidationMessages";
 
 function App(): ReactElement {
-  const currentUser = localStorage.getItem("currentUser") || "";
+  const currentUser = localStorage.getItem("currentUser") || emptyString;
 
   return (
     <>

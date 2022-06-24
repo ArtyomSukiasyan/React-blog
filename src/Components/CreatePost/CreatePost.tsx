@@ -4,13 +4,14 @@ import Button from "../Button/Button";
 import { IPost } from "../../models/Post";
 import IDgenerator from "../../helpers/IDgenerator";
 import "./CreatePost.scss";
+import { emptyString } from "../../constants/ValidationMessages";
 
 export default function CreatePost(): ReactElement {
   const { state } = useLocation();
   const { postId, postTitle, postInfo }: any = state || {};
 
-  const [title, setTitle] = useState<string>(postTitle || "");
-  const [info, setInfo] = useState<string>(postInfo || "");
+  const [title, setTitle] = useState<string>(postTitle || emptyString);
+  const [info, setInfo] = useState<string>(postInfo || emptyString);
 
   const handleChangeTitle = (e: React.ChangeEvent<HTMLInputElement>): void => {
     setTitle(e.target.value);
@@ -55,11 +56,11 @@ export default function CreatePost(): ReactElement {
 
     localStorage.setItem("posts", JSON.stringify(posts));
 
-    setTitle("");
-    setInfo("");
+    setTitle(emptyString);
+    setInfo(emptyString);
   };
 
-  const emptyInputValues = title === "" || info === "";
+  const emptyInputValues = title === emptyString || info === emptyString;
 
   return (
     <div className="wrapper">
