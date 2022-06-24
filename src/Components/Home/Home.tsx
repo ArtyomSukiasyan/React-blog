@@ -36,7 +36,7 @@ export default function Home(): ReactElement {
       return;
     }
 
-    const filteredPosts = posts.filter((el: any) => el.id !== postId);
+    const filteredPosts = posts.filter((el: IPost) => el.id !== postId);
     setPosts(filteredPosts);
     localStorageSetItem("posts", filteredPosts);
   };

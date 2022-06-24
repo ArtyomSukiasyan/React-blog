@@ -6,7 +6,7 @@ export default function FooterIcon({
   icon,
 }: {
   href: string;
-  icon: any;
+  icon: ReactElement;
 }): ReactElement {
   return (
     <a href={href} target="_blank" rel="noreferrer" className="footer-icon">
