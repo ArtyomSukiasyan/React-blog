@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Button from "../Button/Button";
 import Input from "../Input/Input";
 import {
+  emptyString,
   isWrongPasswordMessage,
   notFoundEmailMessage,
 } from "../../constants/ValidationMessages";
@@ -17,14 +18,14 @@ export default function Login(): ReactElement {
 
   const handleChangeEmail = (e: React.ChangeEvent<HTMLInputElement>): void => {
     setEmail(e.target.value);
-    setExistEmailMessage("");
+    setExistEmailMessage(emptyString);
   };
 
   const handleChangePassword = (
     e: React.ChangeEvent<HTMLInputElement>
   ): void => {
     setPassword(e.target.value);
-    setWrongPasswordMessage("");
+    setWrongPasswordMessage(emptyString);
   };
 
   const onRegister = (): void => {

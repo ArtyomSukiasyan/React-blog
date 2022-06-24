@@ -4,6 +4,7 @@ import Input from "../Input/Input";
 import Button from "../Button/Button";
 import {
   alreadyRegistredMessage,
+  emptyString,
   isInvalidEmailMessage,
   isInvalidNameMessage,
   isInvalidPasswordMessage,
@@ -20,24 +21,26 @@ import { ICurrentUser } from "../../models/CurrentUser";
 import "./SignIn.scss";
 
 export default function SignIn(): ReactElement {
-  const [name, setName] = useState("");
-  const [surname, setSurname] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [name, setName] = useState(emptyString);
+  const [surname, setSurname] = useState(emptyString);
+  const [email, setEmail] = useState(emptyString);
+  const [password, setPassword] = useState(emptyString);
   const [isValidName, setIsValidName] = useState(false);
   const [isValidSurname, setIsValidSurname] = useState(false);
   const [isValidEmail, setIsValidEmail] = useState(false);
   const [isValidPassword, setIsValidPassword] = useState(false);
-  const [existEmailMessage, setExistEmailMessage] = useState("");
-  const [isValidNameMessage, setIsValidNameMessage] = useState("");
-  const [isValidSurnameMessage, setIsValidSurnameMessage] = useState("");
-  const [isValidEmailMessage, setIsValidEmailMessage] = useState("");
-  const [isValidPasswordMessage, setIsValidPasswordMessage] = useState("");
+  const [existEmailMessage, setExistEmailMessage] = useState(emptyString);
+  const [isValidNameMessage, setIsValidNameMessage] = useState(emptyString);
+  const [isValidSurnameMessage, setIsValidSurnameMessage] =
+    useState(emptyString);
+  const [isValidEmailMessage, setIsValidEmailMessage] = useState(emptyString);
+  const [isValidPasswordMessage, setIsValidPasswordMessage] =
+    useState(emptyString);
 
   const navigate = useNavigate();
 
   const handleChangeName = (e: React.ChangeEvent<HTMLInputElement>): void => {
-    setIsValidNameMessage("");
+    setIsValidNameMessage(emptyString);
     const isValid = nameCheckRegex.test(e.target.value);
 
     if (isValid) {
@@ -52,7 +55,7 @@ export default function SignIn(): ReactElement {
   const handleChangeSurname = (
     e: React.ChangeEvent<HTMLInputElement>
   ): void => {
-    setIsValidSurnameMessage("");
+    setIsValidSurnameMessage(emptyString);
     const isValid = surnameCheckRegex.test(e.target.value);
 
     if (isValid) {
@@ -65,7 +68,7 @@ export default function SignIn(): ReactElement {
   };
 
   const handleChangeEmail = (e: React.ChangeEvent<HTMLInputElement>): void => {
-    setIsValidEmailMessage("");
+    setIsValidEmailMessage(emptyString);
 
     const isValid = emailCheckRegex.test(e.target.value);
 
@@ -77,7 +80,7 @@ export default function SignIn(): ReactElement {
       setIsValidEmail(true);
 
       const users = JSON.parse(localStorage.getItem("users") || "[]");
-      setExistEmailMessage("");
+      setExistEmailMessage(emptyString);
 
       for (let i = 0; i < users.length; i++) {
         if (users[i]?.email === e.target.value) {
@@ -91,7 +94,7 @@ export default function SignIn(): ReactElement {
   const handleChangePassword = (
     e: React.ChangeEvent<HTMLInputElement>
   ): void => {
-    setIsValidPasswordMessage("");
+    setIsValidPasswordMessage(emptyString);
 
     const isValid = passwordCheckRegex.test(e.target.value);
 

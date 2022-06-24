@@ -11,3 +11,5 @@ export const alreadyRegistredMessage = "You're registered, please login";
 export const notFoundEmailMessage = "Email not found, please register";
 
 export const isWrongPasswordMessage = "Wrong password!";
+
+export const emptyString = ""
