@@ -1,8 +1,12 @@
 import { ReactElement, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { ICurrentUser } from "../../models/CurrentUser";
 import Button from "../Button/Button";
 import Input from "../Input/Input";
+import {
+  isWrongPasswordMessage,
+  notFoundEmailMessage,
+} from "../../constants/ValidationMessages";
+import { ICurrentUser } from "../../models/CurrentUser";
 
 export default function Login(): ReactElement {
   const [email, setEmail] = useState("");
@@ -38,12 +42,12 @@ export default function Login(): ReactElement {
       }
     }
     if (!getEmail) {
-      setExistEmailMessage("Email not found, please register");
+      setExistEmailMessage(notFoundEmailMessage);
       return;
     }
 
     if (users[id].password !== password) {
-      setWrongPasswordMessage("Wrong password!");
+      setWrongPasswordMessage(isWrongPasswordMessage);
       return;
     }
 
