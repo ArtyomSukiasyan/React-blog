@@ -9,8 +9,8 @@ export default function CreatePost(): ReactElement {
   const { state } = useLocation();
   const { postId, postTitle, postInfo }: any = state || {};
 
-  const [title, setTitle] = useState(postTitle || "");
-  const [info, setInfo] = useState(postInfo || "");
+  const [title, setTitle] = useState<string>(postTitle || "");
+  const [info, setInfo] = useState<string>(postInfo || "");
 
   const handleChangeTitle = (e: React.ChangeEvent<HTMLInputElement>): void => {
     setTitle(e.target.value);
@@ -30,7 +30,7 @@ export default function CreatePost(): ReactElement {
     const id = postId || IDgenerator(prevLocalStorage);
 
     let posts: IPost[];
-    
+
     if (postId) {
       for (let i = 0; i < prevLocalStorage.length; i++) {
         if (postId === prevLocalStorage[i].id) {

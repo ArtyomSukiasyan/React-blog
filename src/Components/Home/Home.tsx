@@ -6,7 +6,7 @@ import { IPost } from "../../models/Post";
 import "./Home.scss";
 
 export default function Home(): ReactElement {
-  const [posts, setPosts] = useState(
+  const [posts, setPosts] = useState<IPost[]>(
     JSON.parse(localStorage.getItem("posts") || "[]")
   );
   const navigate = useNavigate();

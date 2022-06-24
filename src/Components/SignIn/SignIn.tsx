@@ -21,21 +21,24 @@ import { ICurrentUser } from "../../models/CurrentUser";
 import "./SignIn.scss";
 
 export default function SignIn(): ReactElement {
-  const [name, setName] = useState(emptyString);
-  const [surname, setSurname] = useState(emptyString);
-  const [email, setEmail] = useState(emptyString);
-  const [password, setPassword] = useState(emptyString);
-  const [isValidName, setIsValidName] = useState(false);
-  const [isValidSurname, setIsValidSurname] = useState(false);
-  const [isValidEmail, setIsValidEmail] = useState(false);
-  const [isValidPassword, setIsValidPassword] = useState(false);
-  const [existEmailMessage, setExistEmailMessage] = useState(emptyString);
-  const [isValidNameMessage, setIsValidNameMessage] = useState(emptyString);
+  const [name, setName] = useState<string>(emptyString);
+  const [surname, setSurname] = useState<string>(emptyString);
+  const [email, setEmail] = useState<string>(emptyString);
+  const [password, setPassword] = useState<string>(emptyString);
+  const [isValidName, setIsValidName] = useState<boolean>(false);
+  const [isValidSurname, setIsValidSurname] = useState<boolean>(false);
+  const [isValidEmail, setIsValidEmail] = useState<boolean>(false);
+  const [isValidPassword, setIsValidPassword] = useState<boolean>(false);
+  const [existEmailMessage, setExistEmailMessage] =
+    useState<string>(emptyString);
+  const [isValidNameMessage, setIsValidNameMessage] =
+    useState<string>(emptyString);
   const [isValidSurnameMessage, setIsValidSurnameMessage] =
-    useState(emptyString);
-  const [isValidEmailMessage, setIsValidEmailMessage] = useState(emptyString);
+    useState<string>(emptyString);
+  const [isValidEmailMessage, setIsValidEmailMessage] =
+    useState<string>(emptyString);
   const [isValidPasswordMessage, setIsValidPasswordMessage] =
-    useState(emptyString);
+    useState<string>(emptyString);
 
   const navigate = useNavigate();
 

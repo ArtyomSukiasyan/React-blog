@@ -5,7 +5,7 @@ import { ReactComponent as CloseIcon } from "../../Assets/close.svg";
 import "./MobileMenu.scss";
 
 export default function MobileMenu() {
-  const [isOpen, setIsopen] = useState(false);
+  const [isOpen, setIsopen] = useState<boolean>(false);
   const navigate = useNavigate();
 
   const toggleMobileMenu = (): void => {

@@ -10,10 +10,12 @@ import {
 import { ICurrentUser } from "../../models/CurrentUser";
 
 export default function Login(): ReactElement {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [existEmailMessage, setExistEmailMessage] = useState("");
-  const [wrongPasswordMessage, setWrongPasswordMessage] = useState("");
+  const [email, setEmail] = useState<string>(emptyString);
+  const [password, setPassword] = useState<string>(emptyString);
+  const [existEmailMessage, setExistEmailMessage] =
+    useState<string>(emptyString);
+  const [wrongPasswordMessage, setWrongPasswordMessage] =
+    useState<string>(emptyString);
   const navigate = useNavigate();
 
   const handleChangeEmail = (e: React.ChangeEvent<HTMLInputElement>): void => {
